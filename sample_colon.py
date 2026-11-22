@@ -37,19 +37,20 @@ def make_rings(C, n1, n2, r, theta):
     P = np.zeros((len(C), len(theta), 3))
     for i in range(len(C)):
         for j in range(len(theta)):
-            direction = np.cos(theta[j]) * N1[i] + np.sin(theta[j]) * N2[i]
+            direction = np.cos(theta[j]) * n1[i] + np.sin(theta[j]) * n2[i]
             P[i, j] = C[i] + r[i, j] * direction  
     return P
 
-def idx(i, j, n=NUM_AROUND):
-        return i * n + (j % n)
+def idx(i, j, n=NUM_AROUND): 
+    # get the value on the grid P 
+    return i * n + (j % n)
 
 def make_mesh(P):
     n_rings, n_around, _ = P.shape
     vertices = P.reshape(-1, 3) 
 
     triangles = []
-    for i in range(n_rings - 1):
+    for i in range(n_rings - 1): # go through 600 rings
         for j in range(n_around):
             a = idx(i, j) 
             b = idx(i, j + 1) 
@@ -100,20 +101,17 @@ def fix_normals(mesh, P, C):
         mesh.compute_vertex_normals()
     return mesh
 
-if __name__ == "__main__":
-    import matplotlib.pyplot as plt
+
+def build_colon():
     C = make_centerline()
     T, N1, N2 = make_frames(C)
     s = np.concatenate([[0.0], np.cumsum(np.linalg.norm(np.diff(C, axis=0), axis=1))])
     theta = np.linspace(0, 2 * np.pi, NUM_AROUND, endpoint=False)
-
     r, polyps = make_radius(s, theta)
-    plt.imshow(r.T, aspect="auto"); plt.colorbar(label="radius (mm)")
-    plt.xlabel("ring"); plt.ylabel("angle index"); plt.show()
-
     P = make_rings(C, N1, N2, r, theta)
     mesh = fix_normals(make_mesh(P), P, C)
     polyp_xyz = np.array([P[i, j] for i, j in polyps])
-    print("polyp positions:\n", polyp_xyz)
+    return mesh, C, T, N1, N2, polyp_xyz
 
-    o3d.visualization.draw_geometries([mesh], mesh_show_back_face=True)
+if __name__ == "__main__":
+    print("bah")
