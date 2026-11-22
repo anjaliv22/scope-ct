@@ -44,3 +44,14 @@ Step 4: We got what the camera sees and built a point cloud of the portion of th
   <em>Plotting results of any error and the scope path and ICP time  </em>
 </p>
 
+Step 5 and 6: i plotted the error results as well as the ICP time tracking to be able to see it. Building the live viewer shows me where the camera is in the colon but also tell me how far the polyp (little bump) is from the camera so i can keep working towards it. 
+
+<p align="center">
+  <video width="600" controls>
+    <source src="sample_shots/colon-demo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <br>
+  <em>Demo of the project</em>
+</p>
+
