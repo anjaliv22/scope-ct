@@ -19,8 +19,6 @@ ToF is a time of fly camera which is a camera that uses the time a signal takes 
   <em>Point Cloud view of when at point 100</em>
 </p>
 
-
-
 <p align="center">
   <img src="sample_shots/colon-depth.png" alt="depth view of inside the colon when at point 100" width="560">
   <br>
@@ -28,6 +26,12 @@ ToF is a time of fly camera which is a camera that uses the time a signal takes 
 </p>
 
 
+Step 3: Mocking the movement of an actual camera moving through a colon. i dont have live video of a procedure so im going to simulate it by calculating. I add in a bit of slide, tilt and rolling to the camera for realistic variables. Essentially, every 2 points i calculate the pose (where the camera is in the colon).
 
+<p align="center">
+  <img src="sample_shots/cam_path.png" alt="view inside the colon of the cameras simulated path width="560">
+  <br>
+  <em>Trajectory of the simulated camera path </em>
+</p>
 
 
