@@ -72,7 +72,7 @@ if __name__ == "__main__":
         if not vis.poll_events():         
             break
         vis.update_renderer()
-        time.sleep(1 / 10)                
+        time.sleep(1 / 20)                
 
     vis.run()                              
     vis.destroy_window()
