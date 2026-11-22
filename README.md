@@ -34,4 +34,5 @@ Step 3: Mocking the movement of an actual camera moving through a colon. i dont 
   <em>Trajectory of the simulated camera path </em>
 </p>
 
+Step 4: We got what the camera sees and built a point cloud of the portion of the colon the camera is looking at. Remembering the pose of the camera is not useful if we dont know where it is in the colon making it hard to navigate. To make this functionality useful, we add in a way to use ICP to essentially map our source to target. The target in this case is the 3d model of the colon I built in step 1 and then the source is what the camera is looking at right now. Using what the camera sees we can match where it fits in the colon and find out where the camera is relative to the colon ! 
 
