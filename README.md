@@ -46,12 +46,9 @@ Step 4: We got what the camera sees and built a point cloud of the portion of th
 
 Step 5 and 6: i plotted the error results as well as the ICP time tracking to be able to see it. Building the live viewer shows me where the camera is in the colon but also tell me how far the polyp (little bump) is from the camera so i can keep working towards it. 
 
-<p align="center">
-  <video width="600" controls>
-    <source src="sample_shots/colon-demo.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  <br>
-  <em>Demo of the project</em>
-</p>
+
+https://github.com/user-attachments/assets/94b27c54-eb8a-4f17-88b0-a0fdab628588
+
+
+This is the screen recording of my demo. What you see here is the point cloud of our target, the mesh colon, and then the source point cloud of the portions of the colon the camera sees. The point cloud of the source is the green "cloud" that works its way through the colon. The path of the camera can be seen through the slim blue and orange line. The red dots are the polyps, and the camera itself is represented through its pose, which 3 arrows: T, N1, and N2. 
 
