@@ -4,3 +4,6 @@ trying to learn 3D registration. Simulating how it would be to track an endoscop
 
 Step 1: Building a Sample Colon 
 Usually for patients a CT scan would create a 3d model of what we are trying to work with but i dont have that so im going to build a sample of a colon like a sample mesh.
+
+Step 2: Creating a mock ToF camera
+ToF is a time of fly camera which is a camera that uses the time a signal takes to reflect/return/fly to calculate and map out distance params. So for like LiDAR, a light ray is shot out the distance an object is from the sensor is calcualted by distance = (speed of light * time it takes to reflect back) / 2. In the context of this project, tof camera is attached to an endoscope to essentially map out the insides of a colon. I dont have a tof camera so im going to hardcore the functionality of one! 
